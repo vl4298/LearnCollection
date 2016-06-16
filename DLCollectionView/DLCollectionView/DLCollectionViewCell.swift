@@ -22,7 +22,7 @@ class DLCollectionViewCell: UICollectionViewCell {
     super.init(frame: frame)
     textLb = UILabel(frame: contentView.bounds)
     textLb.font = UIFont.boldSystemFontOfSize(10)
-    textLb.textAlignment = .Left
+    textLb.textAlignment = .Center
     textLb.textColor = UIColor.blackColor()
     contentView.addSubview(textLb)
     
@@ -31,5 +31,16 @@ class DLCollectionViewCell: UICollectionViewCell {
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    text = ""
+  }
+  
+  override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+    super.applyLayoutAttributes(layoutAttributes)
+    
+    self.textLb.center = CGPoint(x: CGRectGetWidth(contentView.bounds) / 2, y: CGRectGetHeight(contentView.bounds) / 2)
   }
 }
