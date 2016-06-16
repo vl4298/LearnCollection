@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		2893D8691D1248F0005E5CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8681D1248F0005E5CA1 /* AppDelegate.swift */; };
-		2893D86B1D1248F0005E5CA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D86A1D1248F0005E5CA1 /* ViewController.swift */; };
 		2893D86E1D1248F0005E5CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893D86C1D1248F0005E5CA1 /* Main.storyboard */; };
 		2893D8701D1248F0005E5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2893D86F1D1248F0005E5CA1 /* Assets.xcassets */; };
 		2893D8731D1248F0005E5CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893D8711D1248F0005E5CA1 /* LaunchScreen.storyboard */; };
+		2893D87B1D124953005E5CA1 /* DLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D87A1D124953005E5CA1 /* DLViewController.swift */; };
+		2893D87D1D124AA1005E5CA1 /* DLCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D87C1D124AA1005E5CA1 /* DLCollectionViewLayout.swift */; };
+		2893D87F1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */; };
+		2893D8811D124ACC005E5CA1 /* DLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */; };
+		2893D8831D124AF7005E5CA1 /* DLCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2893D8651D1248F0005E5CA1 /* DLCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2893D8681D1248F0005E5CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2893D86A1D1248F0005E5CA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2893D86D1D1248F0005E5CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2893D86F1D1248F0005E5CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2893D8721D1248F0005E5CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2893D8741D1248F0005E5CA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2893D87A1D124953005E5CA1 /* DLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
+		2893D87C1D124AA1005E5CA1 /* DLCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewLayout.swift; sourceTree = "<group>"; };
+		2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewCell.swift; sourceTree = "<group>"; };
+		2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				2893D8681D1248F0005E5CA1 /* AppDelegate.swift */,
-				2893D86A1D1248F0005E5CA1 /* ViewController.swift */,
 				2893D86C1D1248F0005E5CA1 /* Main.storyboard */,
 				2893D86F1D1248F0005E5CA1 /* Assets.xcassets */,
 				2893D8711D1248F0005E5CA1 /* LaunchScreen.storyboard */,
 				2893D8741D1248F0005E5CA1 /* Info.plist */,
+				2893D87A1D124953005E5CA1 /* DLViewController.swift */,
+				2893D87C1D124AA1005E5CA1 /* DLCollectionViewLayout.swift */,
+				2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */,
+				2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */,
+				2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */,
 			);
 			path = DLCollectionView;
 			sourceTree = "<group>";
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2893D86B1D1248F0005E5CA1 /* ViewController.swift in Sources */,
+				2893D87D1D124AA1005E5CA1 /* DLCollectionViewLayout.swift in Sources */,
+				2893D8831D124AF7005E5CA1 /* DLCollectionView.swift in Sources */,
+				2893D87F1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift in Sources */,
+				2893D87B1D124953005E5CA1 /* DLViewController.swift in Sources */,
+				2893D8811D124ACC005E5CA1 /* DLCollectionViewCell.swift in Sources */,
 				2893D8691D1248F0005E5CA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
