@@ -10,4 +10,16 @@ import UIKit
 
 class DLCollectionView: UICollectionView {
 
+  convenience init(frame: CGRect) {
+    let collectionLayout = DLCollectionViewFlowLayout()
+    self.init(frame: frame, collectionViewLayout: collectionLayout)
+  }
+  
+  override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    super.init(frame: frame, collectionViewLayout: layout)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
 }

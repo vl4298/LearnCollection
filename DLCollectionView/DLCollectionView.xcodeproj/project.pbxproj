@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282DC88C1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282DC88B1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift */; };
 		2893D8691D1248F0005E5CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8681D1248F0005E5CA1 /* AppDelegate.swift */; };
 		2893D86E1D1248F0005E5CA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2893D86C1D1248F0005E5CA1 /* Main.storyboard */; };
 		2893D8701D1248F0005E5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2893D86F1D1248F0005E5CA1 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		282DC88B1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewLayoutAttribute.swift; sourceTree = "<group>"; };
 		2893D8651D1248F0005E5CA1 /* DLCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2893D8681D1248F0005E5CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2893D86D1D1248F0005E5CA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */,
 				2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */,
 				2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */,
+				282DC88B1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift */,
 			);
 			path = DLCollectionView;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				2893D87D1D124AA1005E5CA1 /* DLCollectionViewLayout.swift in Sources */,
 				2893D8831D124AF7005E5CA1 /* DLCollectionView.swift in Sources */,
 				2893D87F1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift in Sources */,
+				282DC88C1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift in Sources */,
 				2893D87B1D124953005E5CA1 /* DLViewController.swift in Sources */,
 				2893D8811D124ACC005E5CA1 /* DLCollectionViewCell.swift in Sources */,
 				2893D8691D1248F0005E5CA1 /* AppDelegate.swift in Sources */,
@@ -304,6 +308,7 @@
 				2893D8791D1248F0005E5CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
