@@ -24,5 +24,6 @@ class DLCollectionViewLayoutAttribute: UICollectionViewLayoutAttributes {
     super.isEqual(object)
     let attribute = object as! DLCollectionViewLayoutAttribute
     return (attribute.shouldRasterize == self.shouldRasterize) && (attribute.maskingValue == self.maskingValue)
+    
   }
 }

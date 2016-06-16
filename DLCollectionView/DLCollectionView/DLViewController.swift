@@ -14,28 +14,26 @@ class DLViewController: UIViewController {
   let cellIdentifier = "DLCell"
   var collectionView: UICollectionView! = nil
   var layoutChangeSegmentControl: UISegmentedControl! = nil
-  var coverFlowCollectionViewLayout: DLCollectionViewFlowLayout! = nil
-  var boringCollectionViewLayout: UICollectionViewFlowLayout! = nil
+  var circleLayout: DLCollectionViewFlowLayout! = nil
+  var flowLayout: UICollectionViewFlowLayout! = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    layoutChangeSegmentControl = UISegmentedControl(items: ["Boring", "Cover Flow"])
-    layoutChangeSegmentControl.selectedSegmentIndex = 0
-    layoutChangeSegmentControl.addTarget(self, action: #selector(self.layoutChangeSegmentControlDidChange), forControlEvents: .ValueChanged)
-    
-    self.navigationItem.titleView = layoutChangeSegmentControl
+    setUpSegmentControl()
+    addNavigationItem()
   }
   
   override func loadView() {
-    coverFlowCollectionViewLayout = DLCollectionViewFlowLayout()
+    super.loadView()
+    circleLayout = DLCollectionViewFlowLayout()
     
-    boringCollectionViewLayout = UICollectionViewFlowLayout()
-    boringCollectionViewLayout.itemSize = CGSize(width: 140, height: 140)
-    boringCollectionViewLayout.minimumLineSpacing = 10.0
-    boringCollectionViewLayout.minimumInteritemSpacing = 10.0
+    flowLayout = UICollectionViewFlowLayout()
+    flowLayout.itemSize = CGSize(width: 140, height: 140)
+    flowLayout.minimumLineSpacing = 10.0
+    flowLayout.minimumInteritemSpacing = 10.0
     
-    let photoCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: boringCollectionViewLayout)
+    let photoCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
     photoCollectionView.dataSource = self
     photoCollectionView.delegate = self
     
@@ -44,17 +42,43 @@ class DLViewController: UIViewController {
     photoCollectionView.indicatorStyle = UIScrollViewIndicatorStyle.White
     
     self.collectionView = photoCollectionView
+    
+    view.addSubview(collectionView)
+  }
+  
+  private func addNavigationItem() {
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addItem))
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: #selector(self.deleteItem))
+  }
+  
+  private func setUpSegmentControl() {
+    layoutChangeSegmentControl = UISegmentedControl(items: ["Boring", "Cover Flow"])
+    layoutChangeSegmentControl.selectedSegmentIndex = 0
+    layoutChangeSegmentControl.addTarget(self, action: #selector(self.layoutChangeSegmentControlDidChange), forControlEvents: .ValueChanged)
+    
+    self.navigationItem.titleView = layoutChangeSegmentControl
   }
   
   @objc private func layoutChangeSegmentControlDidChange() {
     if layoutChangeSegmentControl.selectedSegmentIndex == 0 {
-      self.collectionView.setCollectionViewLayout(boringCollectionViewLayout, animated: false)
+      flowLayout.invalidateLayout()
+      collectionView.setCollectionViewLayout(flowLayout, animated: false)
     } else {
-      self.collectionView.setCollectionViewLayout(coverFlowCollectionViewLayout, animated: false)
+      circleLayout.invalidateLayout()
+      collectionView.setCollectionViewLayout(circleLayout, animated: false)
     }
     
     self.collectionView.collectionViewLayout.invalidateLayout()
   }
+  
+  @objc private func addItem() {
+    
+  }
+  
+  @objc private func deleteItem() {
+    
+  }
+
 }
 
 extension DLViewController: UICollectionViewDataSource {
@@ -71,7 +95,7 @@ extension DLViewController: UICollectionViewDataSource {
 
 extension DLViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-    if collectionViewLayout == boringCollectionViewLayout {
+    if collectionViewLayout == flowLayout {
       return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     } else {
       if UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation) {
