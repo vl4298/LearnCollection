@@ -61,13 +61,13 @@ class DLViewController: UIViewController {
   @objc private func layoutChangeSegmentControlDidChange() {
     if collectionView.collectionViewLayout == circleLayout {
       flowLayout.invalidateLayout()
-      collectionView.setCollectionViewLayout(flowLayout, animated: false)
+      collectionView.setCollectionViewLayout(flowLayout, animated: true)
     } else {
       circleLayout.invalidateLayout()
-      collectionView.setCollectionViewLayout(circleLayout, animated: false)
+      collectionView.setCollectionViewLayout(circleLayout, animated: true)
     }
     
-    self.collectionView.collectionViewLayout.invalidateLayout()
+    //self.collectionView.collectionViewLayout.invalidateLayout()
   }
   
   @objc private func addItem() {
@@ -101,19 +101,4 @@ extension DLViewController: UICollectionViewDataSource {
 }
 
 extension DLViewController: UICollectionViewDelegateFlowLayout {
-//  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//    if collectionViewLayout == flowLayout {
-//      return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-//    } else {
-//      if UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation) {
-//        return UIEdgeInsets(top: 0, left: 70, bottom: 0, right: 70)
-//      } else {
-//        if CGRectGetHeight(UIScreen.mainScreen().bounds) > 480 {
-//          return UIEdgeInsets(top: 0, left: 190, bottom: 0, right: 190)
-//        } else {
-//          return UIEdgeInsets(top: 0, left: 150, bottom: 0, right: 150)
-//        }
-//      }
-//    }
-//  }
 }
