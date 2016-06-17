@@ -10,8 +10,83 @@
 import UIKit
 
 class DLViewController3Layout: UIViewController {
-
-  var collectionView: UICollectionView!
   
+  var collectionView: UICollectionView!
+  var stackLayout: DLCollectionViewStackLayout!
+  var flowLayout: DLCollectionViewFlowLayout1!
+  var slideLayout: DLCollectionViewSlideLayout!
+  
+  var numberOfSection = 3
+  var numberItemPerSection = 20
+  var section1 = [UIColor]()
+  var section2 = [UIColor]()
+  var section3 = [UIColor]()
+  
+  let cellIdentifier = "DLCell"
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    initDatasource()
+  }
+  
+  override func loadView() {
+    super.loadView()
+    
+    stackLayout = DLCollectionViewStackLayout()
+    flowLayout = DLCollectionViewFlowLayout1()
+    slideLayout = DLCollectionViewSlideLayout()
+    
+    collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: stackLayout)
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    
+    collectionView.registerClass(DLCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+    
+    view.addSubview(collectionView)
+  }
+  
+  private func initDatasource() {
+    for _ in 0..<20 {
+      let color1 = (arc4random() + 255) / 255
+      let color2 = (arc4random() + 255) / 255
+      let color3 = (arc4random() + 255) / 255
+      section1.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+    }
+    
+    for _ in 0..<20 {
+      let color1 = (arc4random() + 255) / 255
+      let color2 = (arc4random() + 255) / 255
+      let color3 = (arc4random() + 255) / 255
+      section2.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+    }
+    
+    for _ in 0..<20 {
+      let color1 = (arc4random() + 255) / 255
+      let color2 = (arc4random() + 255) / 255
+      let color3 = (arc4random() + 255) / 255
+      section3.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+    }
+  }
+  
+}
 
+extension DLViewController3Layout: UICollectionViewDataSource {
+  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return numberOfSection
+  }
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return numberItemPerSection
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! DLCollectionViewCell
+    return cell
+  }
+}
+
+extension DLViewController3Layout: UICollectionViewDelegate {
+  
 }
