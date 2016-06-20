@@ -13,4 +13,12 @@ class DLColorCollectionViewCell: UICollectionViewCell {
   func setColor(color: UIColor) {
     contentView.backgroundColor = color
   }
+  
+  override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+    super.applyLayoutAttributes(layoutAttributes)
+    self.layer.shouldRasterize = true
+    self.layer.shadowColor = UIColor.blackColor().CGColor
+    self.layer.shadowOffset = CGSizeMake(0, 3)
+    //self.maskView.alpha = 0.0
+  }
 }

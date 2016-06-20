@@ -28,45 +28,47 @@ class DLViewController3Layout: UIViewController {
     super.viewDidLoad()
     
     initDatasource()
-  }
-  
-  override func loadView() {
-    super.loadView()
     
     stackLayout = DLCollectionViewStackLayout()
     flowLayout = DLCollectionViewFlowLayout1()
     slideLayout = DLCollectionViewSlideLayout()
     
-    collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: stackLayout)
-    collectionView.delegate = self
+    collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: stackLayout)
+    //collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    //collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     
-    collectionView.registerClass(DLColorCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+    collectionView.registerClass(DLColorCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: cellIdentifier)
     
     view.addSubview(collectionView)
   }
   
+  override func loadView() {
+    super.loadView()
+    
+    
+  }
+  
   private func initDatasource() {
     for _ in 0..<20 {
-      let color1 = (arc4random() + 255) / 255
-      let color2 = (arc4random() + 255) / 255
-      let color3 = (arc4random() + 255) / 255
-      section1.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+      let color1: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color2: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      section1.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
     }
     
     for _ in 0..<20 {
-      let color1 = (arc4random() + 255) / 255
-      let color2 = (arc4random() + 255) / 255
-      let color3 = (arc4random() + 255) / 255
-      section2.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+      let color1: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color2: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      section2.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
     }
     
     for _ in 0..<20 {
-      let color1 = (arc4random() + 255) / 255
-      let color2 = (arc4random() + 255) / 255
-      let color3 = (arc4random() + 255) / 255
-      section3.append(UIColor(red: CGFloat(color1), green: CGFloat(color2), blue: CGFloat(color3), alpha: 1.0))
+      let color1: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color2: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      section3.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
     }
   }
   
@@ -78,7 +80,7 @@ extension DLViewController3Layout: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return numberItemPerSection
+    return 10
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
