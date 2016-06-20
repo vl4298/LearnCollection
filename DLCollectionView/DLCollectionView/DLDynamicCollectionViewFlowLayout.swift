@@ -64,7 +64,7 @@ class DLDynamicCollectionViewFlowLayout: UICollectionViewFlowLayout {
     if dynamicAnimator.behaviors.count == 0 {
       for item in items! {
         let behavior = UIAttachmentBehavior(item: item, attachedToAnchor: item.center)
-        behavior.length = 0.0
+        behavior.length = 1.0
         behavior.damping = 2.0
         behavior.frequency = 1.5
         
