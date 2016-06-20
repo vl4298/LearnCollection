@@ -17,6 +17,8 @@
 		2893D87F1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */; };
 		2893D8811D124ACC005E5CA1 /* DLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */; };
 		2893D8831D124AF7005E5CA1 /* DLCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */; };
+		2899B6661D17CCF400E5AB5A /* DLDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899B6651D17CCF400E5AB5A /* DLDynamicViewController.swift */; };
+		2899B6681D17CD4200E5AB5A /* DLDynamicCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899B6671D17CD4200E5AB5A /* DLDynamicCollectionViewFlowLayout.swift */; };
 		28EFED371D13AF1700D96BC5 /* DLViewController3Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFED361D13AF1700D96BC5 /* DLViewController3Layout.swift */; };
 		28EFED3A1D13AF7C00D96BC5 /* DLCollectionViewStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFED391D13AF7C00D96BC5 /* DLCollectionViewStackLayout.swift */; };
 		28EFED3C1D13AFC700D96BC5 /* DLCollectionViewFlowLayout1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFED3B1D13AFC700D96BC5 /* DLCollectionViewFlowLayout1.swift */; };
@@ -38,6 +40,8 @@
 		2893D87E1D124ABB005E5CA1 /* DLCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		2893D8801D124ACC005E5CA1 /* DLCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewCell.swift; sourceTree = "<group>"; };
 		2893D8821D124AF7005E5CA1 /* DLCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionView.swift; sourceTree = "<group>"; };
+		2899B6651D17CCF400E5AB5A /* DLDynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDynamicViewController.swift; sourceTree = "<group>"; };
+		2899B6671D17CD4200E5AB5A /* DLDynamicCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDynamicCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		28EFED361D13AF1700D96BC5 /* DLViewController3Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLViewController3Layout.swift; sourceTree = "<group>"; };
 		28EFED391D13AF7C00D96BC5 /* DLCollectionViewStackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewStackLayout.swift; sourceTree = "<group>"; };
 		28EFED3B1D13AFC700D96BC5 /* DLCollectionViewFlowLayout1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLCollectionViewFlowLayout1.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		2893D8671D1248F0005E5CA1 /* DLCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				2899B6641D17CCDC00E5AB5A /* Dynamic CollectionView */,
 				28EFED381D13AF3500D96BC5 /* 3Layout */,
 				2893D8681D1248F0005E5CA1 /* AppDelegate.swift */,
 				2893D86C1D1248F0005E5CA1 /* Main.storyboard */,
@@ -90,6 +95,15 @@
 				282DC88B1D1288FF008BC3F0 /* DLCollectionViewLayoutAttribute.swift */,
 			);
 			path = DLCollectionView;
+			sourceTree = "<group>";
+		};
+		2899B6641D17CCDC00E5AB5A /* Dynamic CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2899B6651D17CCF400E5AB5A /* DLDynamicViewController.swift */,
+				2899B6671D17CD4200E5AB5A /* DLDynamicCollectionViewFlowLayout.swift */,
+			);
+			name = "Dynamic CollectionView";
 			sourceTree = "<group>";
 		};
 		28EFED381D13AF3500D96BC5 /* 3Layout */ = {
@@ -177,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EFED371D13AF1700D96BC5 /* DLViewController3Layout.swift in Sources */,
+				2899B6681D17CD4200E5AB5A /* DLDynamicCollectionViewFlowLayout.swift in Sources */,
 				2893D87D1D124AA1005E5CA1 /* DLCollectionViewLayout.swift in Sources */,
 				28EFED3C1D13AFC700D96BC5 /* DLCollectionViewFlowLayout1.swift in Sources */,
 				2893D8831D124AF7005E5CA1 /* DLCollectionView.swift in Sources */,
@@ -186,6 +201,7 @@
 				2893D87B1D124953005E5CA1 /* DLViewController.swift in Sources */,
 				2893D8811D124ACC005E5CA1 /* DLCollectionViewCell.swift in Sources */,
 				28EFED3E1D13AFDD00D96BC5 /* DLCollectionViewSlideLayout.swift in Sources */,
+				2899B6661D17CCF400E5AB5A /* DLDynamicViewController.swift in Sources */,
 				28EFED421D13B0B300D96BC5 /* DLStackColllectionViewLayoutAttribute.swift in Sources */,
 				28EFED3A1D13AF7C00D96BC5 /* DLCollectionViewStackLayout.swift in Sources */,
 				2893D8691D1248F0005E5CA1 /* AppDelegate.swift in Sources */,
