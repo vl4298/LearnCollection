@@ -16,11 +16,13 @@ class DLViewController3Layout: UIViewController {
   var flowLayout: DLCollectionViewFlowLayout1!
   var slideLayout: DLCollectionViewSlideLayout!
   
-  var numberOfSection = 3
+  var numberOfSection = 5
   var numberItemPerSection = 20
   var section1 = [UIColor]()
   var section2 = [UIColor]()
   var section3 = [UIColor]()
+  var section4 = [UIColor]()
+  var section5 = [UIColor]()
   
   let cellIdentifier = "DLCell"
   
@@ -70,6 +72,20 @@ class DLViewController3Layout: UIViewController {
       let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
       section3.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
     }
+    
+    for _ in 0..<20 {
+      let color1: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color2: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      section4.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
+    }
+    
+    for _ in 0..<20 {
+      let color1: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color2: CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      let color3 : CGFloat = CGFloat(arc4random_uniform(255) + 1) / 255
+      section5.append(UIColor(red: color1, green: color2, blue: color3, alpha: 1.0))
+    }
   }
   
 }
@@ -80,7 +96,7 @@ extension DLViewController3Layout: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return numberItemPerSection
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -92,8 +108,12 @@ extension DLViewController3Layout: UICollectionViewDataSource {
       array = section1
     case 1:
       array = section2
-    default:
+    case 2:
       array = section3
+    case 3:
+      array = section4
+    default:
+      array = section5
     }
     
     cell.setColor(array[indexPath.item])

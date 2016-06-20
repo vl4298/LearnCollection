@@ -32,9 +32,8 @@ class DLCollectionViewStackLayout: UICollectionViewLayout {
     pageSize = collectionView!.bounds.size
     
     let availableWidth = pageSize.width - (stackInsets.left + stackInsets.right)
-    numberOfStackAcross = (availableWidth + minimumInterStackSpacing) / (stackSize.width + minimumInterStackSpacing)
-    
-    let spacing = (availableWidth - (numberOfStackAcross * stackSize.width) / (numberOfStackAcross - 1))
+    numberOfStackAcross = floor((availableWidth + minimumInterStackSpacing) / (stackSize.width + minimumInterStackSpacing))
+    let spacing = (availableWidth - (numberOfStackAcross * stackSize.width)) / (numberOfStackAcross - 1)
     numberOfStackRow = ceilf(Float(numberOfStack) / Float(numberOfStackAcross))
     stackFrames = [CGRect]()
     var stackColumn = 0
@@ -45,8 +44,7 @@ class DLCollectionViewStackLayout: UICollectionViewLayout {
     for _ in 0..<numberOfStack {
       let stackFrame = CGRect(origin: CGPoint(x: left, y: top), size: stackSize)
       stackFrames.append(stackFrame)
-      
-      left = stackSize.width + spacing
+      left += stackSize.width + spacing
       stackColumn += 1
       
       if stackColumn >= Int(numberOfStackAcross) {
