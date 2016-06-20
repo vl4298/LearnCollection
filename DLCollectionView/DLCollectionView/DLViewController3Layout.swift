@@ -36,7 +36,7 @@ class DLViewController3Layout: UIViewController {
     slideLayout = DLCollectionViewSlideLayout()
     
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: stackLayout)
-    //collectionView.delegate = self
+    collectionView.delegate = self
     collectionView.dataSource = self
     //collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     
@@ -122,5 +122,12 @@ extension DLViewController3Layout: UICollectionViewDataSource {
 }
 
 extension DLViewController3Layout: UICollectionViewDelegate {
-  
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    if collectionView.collectionViewLayout.isKindOfClass(DLCollectionViewStackLayout.self) {
+      collectionView.setCollectionViewLayout(flowLayout, animated: true)
+    } else {
+      collectionView.setCollectionViewLayout(stackLayout, animated: true)
+    }
+    
+  }
 }

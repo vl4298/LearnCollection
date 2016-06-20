@@ -22,9 +22,10 @@ class DLStackColllectionViewLayoutAttribute: UICollectionViewLayoutAttributes {
   }
   
   override func isEqual(object: AnyObject?) -> Bool {
-    let attribute = object as! DLStackColllectionViewLayoutAttribute
-    if self.shadowOpacity == attribute.shadowOpacity && self.maskValue == attribute.maskValue {
-      return true
+    if let attribute = object as? DLStackColllectionViewLayoutAttribute {
+      if self.shadowOpacity == attribute.shadowOpacity && self.maskValue == attribute.maskValue {
+        return true
+      }
     }
     return false
   }
