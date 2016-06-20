@@ -42,7 +42,7 @@ class DLViewController3Layout: UIViewController {
     collectionView.dataSource = self
     collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     
-    collectionView.registerClass(DLCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+    collectionView.registerClass(DLColorCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
     
     view.addSubview(collectionView)
   }
@@ -82,7 +82,19 @@ extension DLViewController3Layout: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! DLCollectionViewCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! DLColorCollectionViewCell
+    var array: [UIColor]!
+    
+    switch indexPath.section {
+    case 0:
+      array = section1
+    case 1:
+      array = section2
+    default:
+      array = section3
+    }
+    
+    cell.setColor(array[indexPath.item])
     return cell
   }
 }

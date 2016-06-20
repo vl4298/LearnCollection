@@ -9,5 +9,8 @@
 import UIKit
 
 class DLColorCollectionViewCell: UICollectionViewCell {
-
+  
+  func setColor(color: UIColor) {
+    contentView.backgroundColor = color
+  }
 }
